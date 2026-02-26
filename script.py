@@ -17,6 +17,6 @@ if not os.path.exists(folder_output):
 
 for filename in os.listdir(folder_needed):
     img = Image.open(f'{folder_needed}\\{filename}')
-    img.save(f'{folder_output}\\{filename}' , 'png')
-
+    clean_name = os.path.splitext(filename)[0] #splitting to only remain with the filename and remove the extension. 
+    img.save(f'{folder_output}\\{clean_name}.png' , 'png')
 print('Done ✅')
